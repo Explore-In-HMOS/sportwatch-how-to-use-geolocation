@@ -5,7 +5,7 @@ export default {
         locationType: '',
         location: '',
         coordTypes: '',
-        subscribed: '',
+        subscribed: ''
     },
     onGetLocation() {
         const that = this;
@@ -14,10 +14,10 @@ export default {
             timeout: 2000,
             success: function (data) {
                 that.location = JSON.stringify(data);
-                console.log(`myconsole success ${JSON.stringify(data)}`)
+                console.info(`myconsole success ${JSON.stringify(data)}`)
             },
             fail: function (data, code) {
-                console.log(`myconsole error: ${JSON.stringify(data)} ${code}`)
+                console.info(`myconsole error: ${JSON.stringify(data)} ${code}`)
             },
             complete: function () {
             }
@@ -27,11 +27,11 @@ export default {
         const that = this;
         geolocation.getLocationType({
             success: function (data) {
-                console.log(`myconsole locationType ${JSON.stringify(data)}`)
+                console.info(`myconsole locationType ${JSON.stringify(data)}`)
                 that.locationType = JSON.stringify(data);
             },
             fail: function (data, code) {
-                console.log(`myconsole error: ${JSON.stringify(data)} ${code}`)
+                console.info(`myconsole error: ${JSON.stringify(data)} ${code}`)
             }
         })
     },
@@ -39,11 +39,11 @@ export default {
         const that = this;
         geolocation.subscribe({
             success: function (data) {
-                console.log(`myconsole subscribe ${JSON.stringify(data)}`)
+                console.info(`myconsole subscribe ${JSON.stringify(data)}`)
                 that.subscribed = JSON.stringify(data);
             },
             fail: function (data, code) {
-                console.log(`myconsole error: ${JSON.stringify(data)} ${code}`)
+                console.info(`myconsole error: ${JSON.stringify(data)} ${code}`)
             }
         })
     },
